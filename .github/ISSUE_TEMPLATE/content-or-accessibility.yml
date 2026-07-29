@@ -1,0 +1,33 @@
+name: Content or accessibility issue
+description: Report a portfolio content, link, layout, or accessibility defect.
+title: "portfolio: "
+labels: ["portfolio", "accessibility"]
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: Observed issue
+      description: Describe the page, viewport, assistive technology if used, and what happened.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Explain the intended content, link, layout, or accessibility behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include screenshots, route names, console output, or test output. Do not include secrets or private source documents.
+    validations:
+      required: false
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Integrity check
+      options:
+        - label: This report does not include secrets, phone numbers, private employer material, or unsupported professional claims.
+          required: true
