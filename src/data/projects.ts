@@ -191,7 +191,7 @@ export const projects: Project[] = [
       "No npm registry release, provenance attestation, users, downloads, live service, or deployment is claimed.",
       "ReleaseGuard does not prove artifact freshness, test completeness, vulnerability database freshness, or release safety.",
       "It is not a vulnerability scanner, penetration test, dependency-review substitute, or security guarantee.",
-      "Screenshots or short demo media remain pending before public portfolio publication.",
+      "Screenshots or short demo media remain pending before final live portfolio promotion.",
     ],
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/releaseguard",

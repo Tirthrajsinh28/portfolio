@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.1.0] - 2026-07-30
 
 - Build the evidence-led React/TypeScript portfolio with required routes,
   responsive layout, focus management, reduced-motion support, and custom 404.
@@ -10,6 +10,8 @@
   project case-study routes.
 - Add GitHub repository metadata for future publication: workflow, Dependabot,
   pull-request template, and content/accessibility issue template.
+- Add current ServicePulse screenshots captured from labeled synthetic demo
+  mode and published in the public portfolio source.
 
-Remote publication, live deployment, current screenshots, and public repository
-links remain pending.
+Live Vercel deployment, CloudFileFlow/ReleaseGuard media, and final public
+profile/link review remain pending.
