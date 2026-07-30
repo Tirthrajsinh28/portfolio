@@ -457,6 +457,33 @@ main[tabindex]:focus-visible {
   color: var(--teal);
 }
 
+.screenshot-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.screenshot-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+.screenshot-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.screenshot-card figcaption {
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .case-study-aside {
   align-self: start;
   padding: 1.4rem;

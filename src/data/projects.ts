@@ -14,6 +14,11 @@ export interface Project {
   evidenceGate: string;
   architecture?: string;
   evidence?: string[];
+  screenshots?: Array<{
+    src: string;
+    alt: string;
+    caption: string;
+  }>;
   tradeoffs?: string[];
   lessons?: string[];
   limitations?: string[];
@@ -51,6 +56,26 @@ export const projects: Project[] = [
       "Runtime OpenAPI inspection verified all 19 paths, build metadata, and the bearer JWT boundary.",
       "The current backend package produced a 68,078,270-byte executable JAR with SHA-256 recorded in the local test report.",
       "Public ServicePulse CI run 30521691031 passed on GitHub Actions for the frontend job and backend verify job at commit 7d947f7ccbb28978e7576663733b5e30edffcb4b.",
+    ],
+    screenshots: [
+      {
+        src: "/screenshots/servicepulse-dashboard-desktop.png",
+        alt: "ServicePulse synthetic demo dashboard showing incident summary cards and a filtered incident register.",
+        caption:
+          "Dashboard route captured at 1440 px from explicit frontend demo mode with synthetic data; no live backend, customer data, or deployment is claimed.",
+      },
+      {
+        src: "/screenshots/servicepulse-incident-detail-desktop.png",
+        alt: "ServicePulse synthetic demo incident detail page with status, assignment, timeline, and comments sections.",
+        caption:
+          "Incident detail route captured at 1440 px from explicit frontend demo mode to show workflow and collaboration UI states.",
+      },
+      {
+        src: "/screenshots/servicepulse-services-mobile.png",
+        alt: "ServicePulse synthetic demo managed services page displayed at mobile width.",
+        caption:
+          "Managed services route captured at 390 px after horizontal-overflow verification; table overflow stays inside its local scroller.",
+      },
     ],
     tradeoffs: [
       "A modular monolith keeps transactions and authorization deep without manufacturing microservice overhead.",

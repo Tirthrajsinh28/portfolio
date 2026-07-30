@@ -338,6 +338,19 @@ function ProjectPage({ slug }: { slug: string }) {
               </ul>
             </section>
           ) : null}
+          {project.screenshots ? (
+            <section>
+              <h2>Current screenshots</h2>
+              <div className="screenshot-grid">
+                {project.screenshots.map((screenshot) => (
+                  <figure key={screenshot.src} className="screenshot-card">
+                    <img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
+                    <figcaption>{screenshot.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          ) : null}
           {project.tradeoffs ? (
             <section>
               <h2>Trade-offs</h2>

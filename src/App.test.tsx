@@ -42,6 +42,15 @@ describe("portfolio foundation", () => {
     expect(
       screen.getByText(/public GitHub Actions verified the backend container image/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Current screenshots", level: 2 }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(/synthetic demo dashboard showing incident summary cards/i),
+    ).toHaveAttribute("src", "/screenshots/servicepulse-dashboard-desktop.png");
+    expect(
+      screen.getByText(/captured at 390 px after horizontal-overflow verification/i),
+    ).toBeInTheDocument();
     expect(screen.queryByText("Pending implementation")).not.toBeInTheDocument();
     expect(screen.queryByText(/successfully deployed/i)).not.toBeInTheDocument();
     expect(await axe(container)).toHaveNoViolations();
