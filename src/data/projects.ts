@@ -140,7 +140,7 @@ export const projects: Project[] = [
       "GitHub Actions, Dependabot, and package-boundary configuration",
     ],
     evidenceGate:
-      "The local CLI slice is verified. Publication still requires a public repository, remote GitHub Actions evidence, npm publication/provenance decisions, and current screenshots or short demo media.",
+      "The local CLI slice and public GitHub Actions pipeline are verified. Publication still requires npm publication/provenance decisions only if a package release is desired, plus current screenshots or short demo media.",
     architecture:
       "ReleaseGuard reads a versioned repository configuration file, validates configured artifact paths against lexical and realpath containment checks, parses caller-provided build, Istanbul coverage, JUnit, npm-audit, changelog, and repository files, then evaluates deterministic policy checks. It emits a bounded human report or JSON document and exits with 0 for ready, 1 for policy failures, and 2 for configuration or input errors. The CLI never executes commands from the evaluated repository.",
     evidence: [
@@ -148,8 +148,8 @@ export const projects: Project[] = [
       "A clean local gate passed ESLint, strict TypeScript, unit/filesystem integration tests, coverage thresholds, and the production build.",
       "The compiled CLI returned exit 0 for the ready example, exit 1 for the synthetic failing-policy config, and exit 2 for invalid input.",
       "JSON output parsed as ready with zero failures, and the human report summarized 7 passed checks for the ready example.",
-      "The package archive contained 25 runtime files, measured 13,584 bytes, and excluded tests, examples, CI metadata, TypeScript sources, coverage, and node_modules.",
-      "GitHub Actions, Dependabot, issue template, schema, and example fixtures parse and pass structural assertions; remote execution is not claimed.",
+      "The package archive dry-run contained 25 runtime files, measured 13,592 bytes, and excluded tests, examples, CI metadata, TypeScript sources, coverage, and node_modules.",
+      "Public ReleaseGuard CI run 30530094408 passed on GitHub Actions for exact dependency install, lint/type-check/test/build, high-severity dependency audit, CLI JSON report generation, package archive build, and artifact upload at commit 0604a61ddd4bf81288185c17637ac237655901b9.",
     ],
     tradeoffs: [
       "ReleaseGuard consumes existing CI artifacts instead of running repository commands, which keeps the tool safer but means artifact provenance is supplied by the caller.",
@@ -163,15 +163,16 @@ export const projects: Project[] = [
       "Package inspection matters because tests can pass while unnecessary files still leak into a publishable artifact.",
     ],
     limitations: [
-      "No public repository, npm registry release, provenance attestation, remote CI run, users, downloads, or deployment is claimed.",
+      "No npm registry release, provenance attestation, users, downloads, live service, or deployment is claimed.",
       "ReleaseGuard does not prove artifact freshness, test completeness, vulnerability database freshness, or release safety.",
       "It is not a vulnerability scanner, penetration test, dependency-review substitute, or security guarantee.",
       "Screenshots or short demo media remain pending before public portfolio publication.",
     ],
-    repositoryStatus: "Not published",
+    repositoryStatus: "Published on GitHub",
+    repositoryUrl: "https://github.com/Tirthrajsinh28/releaseguard",
     demoStatus: "Verified locally; no live URL",
     verification:
-      "13 tests; local CLI ready/failing/error runs; package and workflow structure checks",
+      "13 tests; public ReleaseGuard CI run 30530094408 passed; package dry-run verified",
   },
   {
     slug: "api-harbor",

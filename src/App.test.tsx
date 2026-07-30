@@ -81,7 +81,13 @@ describe("portfolio foundation", () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText("Locally verified")).not.toHaveLength(0);
     expect(
+      screen.getByRole("link", { name: "Published on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/Tirthrajsinh28/releaseguard");
+    expect(
       screen.getByText(/13 tests pass with coverage enabled/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Public ReleaseGuard CI run 30530094408 passed on GitHub Actions/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/exit 0 for the ready example/i),
