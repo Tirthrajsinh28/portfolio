@@ -90,16 +90,17 @@ export const projects: Project[] = [
       "Hash-locked builds, Docker/Compose, and CI configuration",
     ],
     evidenceGate:
-      "The local adapter slice is verified. Publication still requires a public repository, current screenshots or short demo media, and either executed Docker/CI evidence or precise labels that those gates remain unverified.",
+      "The local adapter slice and public GitHub Actions pipeline are verified. Release still requires current screenshots or short demo media and a live link or explicit local-demo label.",
     architecture:
       "A FastAPI process authenticates synthetic JWT principals and streams allowlisted files into generated quarantine paths while committing file, job, and audit rows to migrated SQLite. A separate polling worker atomically claims due jobs, validates bounded content, promotes valid objects, schedules exponential retries, recovers stale claims, and dead-letters exhausted work. Owner-scoped API queries expose metadata, job state, audit history, and READY-only downloads; a configured operator gets bounded sanitized job operations.",
     evidence: [
-      "31 tests pass in a fresh hash-locked environment; measured coverage is 91% of lines with an enforced 80% minimum.",
+      "34 tests pass locally with 90% reported coverage and an enforced 80% minimum.",
       "An empty database upgrades to Alembic revision 20260704_01, startup rejects an unmigrated schema, and the model-drift check reports no pending operations.",
       "A real local Uvicorn and installed-worker flow verified health, HTTP 201 upload, READY promotion, chronological audit, owner download, cross-owner HTTP 404, operator counts, and correlated JSON logs.",
       "A separate non-editable runtime-lock install passed pip check and processed an upload through the continuously polling daemon.",
       "Wheel and source distributions build without network-isolated build dependencies; pip-audit reported no known vulnerabilities at the recorded check.",
       "Dockerfile, Compose, GitHub Actions, Dependabot, and security/order contracts parse and pass structural assertions.",
+      "Public CloudFileFlow CI run 30524523738 passed verify and container jobs at commit 949ebe2488a3b89374253babe48b392d2b24ad99.",
     ],
     tradeoffs: [
       "SQLite and the filesystem make the complete failure model runnable at CAD 0, but they are not evidence of S3 durability or SQS visibility semantics.",
@@ -113,14 +114,15 @@ export const projects: Project[] = [
       "Removing build isolation exposed an undeclared editable-build dependency, which is now explicit in a separate hash lock.",
     ],
     limitations: [
-      "Docker is unavailable locally, so the non-root image, Compose health, and GitHub Actions container job are configured but unexecuted.",
+      "Docker is unavailable locally, but public GitHub Actions verified the non-root image build, Compose startup, API health, and worker healthcheck.",
       "No LocalStack, S3, SQS, PostgreSQL, external identity provider, live deployment, users, traffic, or cloud reliability is claimed.",
       "Signature and syntax checks are not malware scanning; rate limiting, reconciliation, replay, key rotation, metrics export, and alerting remain future work.",
-      "The repository and live demo are not published, and project screenshots or demo media remain a release gate.",
+      "The repository is public, but the live demo, project screenshots, and demo media remain release gates.",
     ],
-    repositoryStatus: "Not published",
+    repositoryStatus: "Published on GitHub",
+    repositoryUrl: "https://github.com/Tirthrajsinh28/cloudfileflow",
     demoStatus: "Verified locally; no live URL",
-    verification: "31 tests; local API, one-shot worker, daemon, migration, and build checks",
+    verification: "34 tests; public CloudFileFlow CI run 30524523738 passed",
   },
   {
     slug: "releaseguard",

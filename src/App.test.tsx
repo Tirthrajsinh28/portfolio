@@ -55,10 +55,16 @@ describe("portfolio foundation", () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText("Locally verified")).not.toHaveLength(0);
     expect(
-      screen.getByText(/31 tests pass in a fresh hash-locked environment/i),
+      screen.getByRole("link", { name: "Published on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/Tirthrajsinh28/cloudfileflow");
+    expect(
+      screen.getByText(/34 tests pass locally with 90% reported coverage/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Docker is unavailable locally/i),
+      screen.getByText(/Public CloudFileFlow CI run 30524523738 passed verify and container jobs at commit/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Docker is unavailable locally, but public GitHub Actions verified/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/checks are explicitly not malware scanning/i),
