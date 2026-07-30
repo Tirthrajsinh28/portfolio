@@ -29,7 +29,9 @@ describe("portfolio foundation", () => {
       screen.getByRole("heading", { name: "ServicePulse", level: 1 }),
     ).toBeInTheDocument();
     expect(screen.getAllByText("Locally verified")).not.toHaveLength(0);
-    expect(screen.getByText("Not published")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Published on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/Tirthrajsinh28/servicepulse");
     expect(screen.getByText("Verified locally; no live URL")).toBeInTheDocument();
     expect(
       screen.getByText(/68 backend tests pass with an enforced 80% line gate/i),
@@ -38,7 +40,7 @@ describe("portfolio foundation", () => {
       screen.getByText(/failed-notification administrator\/viewer states/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Docker is unavailable locally/i),
+      screen.getByText(/public GitHub Actions verified the backend container image/i),
     ).toBeInTheDocument();
     expect(screen.queryByText("Pending implementation")).not.toBeInTheDocument();
     expect(screen.queryByText(/successfully deployed/i)).not.toBeInTheDocument();

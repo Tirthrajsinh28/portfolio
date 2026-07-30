@@ -382,7 +382,15 @@ function ProjectPage({ slug }: { slug: string }) {
             </div>
             <div>
               <dt>Repository</dt>
-              <dd>{project.repositoryStatus ?? "Not published"}</dd>
+              <dd>
+                {project.repositoryUrl ? (
+                  <a className="text-link" href={project.repositoryUrl}>
+                    {project.repositoryStatus ?? project.repositoryUrl}
+                  </a>
+                ) : (
+                  (project.repositoryStatus ?? "Not published")
+                )}
+              </dd>
             </div>
             <div>
               <dt>Live demo</dt>

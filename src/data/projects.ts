@@ -18,6 +18,7 @@ export interface Project {
   lessons?: string[];
   limitations?: string[];
   repositoryStatus?: string;
+  repositoryUrl?: string;
   demoStatus?: string;
   verification?: string;
 }
@@ -39,7 +40,7 @@ export const projects: Project[] = [
       "Tests, observability, and Docker/CI configuration",
     ],
     evidenceGate:
-      "The implemented local slice is verified. Publication still requires a public repository, Docker/PostgreSQL and CI execution, current screenshots, and either a working live link or an explicit local-demo label.",
+      "The implemented slice is verified locally and through public GitHub Actions. Release still requires current screenshots and either a working live link or an explicit local-demo label.",
     architecture:
       "A React and TypeScript client calls a Spring Boot modular monolith. PostgreSQL is the intended system of record; Flyway manages the schema, workspace membership enforces tenant access, and a transactional outbox feeds a bounded notification worker. An unprivileged NGINX tier is configured to serve the client and proxy same-origin API traffic.",
     evidence: [
@@ -49,6 +50,7 @@ export const projects: Project[] = [
       "A real local browser flow verified sign-in, workspace discovery, declaration, transition, assignment, comments, and responsive layout.",
       "Runtime OpenAPI inspection verified all 19 paths, build metadata, and the bearer JWT boundary.",
       "The current backend package produced a 68,078,270-byte executable JAR with SHA-256 recorded in the local test report.",
+      "Public ServicePulse CI run 30521691031 passed on GitHub Actions for the frontend job and backend verify job at commit 7d947f7ccbb28978e7576663733b5e30edffcb4b.",
     ],
     tradeoffs: [
       "A modular monolith keeps transactions and authorization deep without manufacturing microservice overhead.",
@@ -62,14 +64,15 @@ export const projects: Project[] = [
       "Generated documentation must be tested for security semantics, not merely endpoint presence.",
     ],
     limitations: [
-      "Docker is unavailable locally, so PostgreSQL Testcontainers, both images, Compose health, and GitHub Actions remain unexecuted.",
-      "No public repository, live deployment, production traffic, or external notification delivery is claimed.",
+      "Docker is unavailable locally, so Compose health remains unexecuted in this workspace; public GitHub Actions verified the backend container image, frontend container image, frontend checks, and PostgreSQL integration test job.",
+      "No live deployment, production traffic, or external notification delivery is claimed.",
       "Registration, invitations, external notification delivery, service deletion, distributed/edge rate limits, signing-key rotation, and database-enforced audit immutability remain future work.",
       "Physical-keyboard, contrast, zoom, and screen-reader checks remain before public release.",
     ],
-    repositoryStatus: "Not published",
+    repositoryStatus: "Published on GitHub",
+    repositoryUrl: "https://github.com/Tirthrajsinh28/servicepulse",
     demoStatus: "Verified locally; no live URL",
-    verification: "68 backend + 20 frontend tests; local browser and OpenAPI checks",
+    verification: "68 backend + 20 frontend tests; public ServicePulse CI run 30521691031 passed",
   },
   {
     slug: "cloudfileflow",
