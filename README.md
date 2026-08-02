@@ -83,6 +83,11 @@ output directory. Deployment has not been executed; a later deployment stage
 will record the exact command, URL, health check, rollback procedure, and
 known limits.
 
+The executable deployment checklist is in
+[`docs/DEPLOYMENT_RUNBOOK.md`](docs/DEPLOYMENT_RUNBOOK.md). It records the
+pre-deployment test gate, Vercel login/link commands, preview checks,
+production checks, rollback notes, and claims guard.
+
 ## License
 
 MIT

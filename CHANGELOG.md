@@ -14,5 +14,8 @@
   mode and published in the public portfolio source.
 - Add current CloudFileFlow and ReleaseGuard static demo media generated from
   fresh local API/worker and CLI outputs.
+- Add a Vercel deployment runbook with pre-deployment checks, Hobby/free-tier
+  guardrails, preview and production verification steps, rollback notes, and
+  claims boundaries.
 
 Live Vercel deployment and final public profile/link review remain pending.
