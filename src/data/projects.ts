@@ -45,7 +45,7 @@ export const projects: Project[] = [
       "Tests, observability, and Docker/CI configuration",
     ],
     evidenceGate:
-      "The implemented slice is verified locally and through public GitHub Actions. Release still requires current screenshots and either a working live link or an explicit local-demo label.",
+      "The implemented slice is verified locally and through public GitHub Actions, with current static demo media. A live link remains pending until Vercel deployment is executed and checked.",
     architecture:
       "A React and TypeScript client calls a Spring Boot modular monolith. PostgreSQL is the intended system of record; Flyway manages the schema, workspace membership enforces tenant access, and a transactional outbox feeds a bounded notification worker. An unprivileged NGINX tier is configured to serve the client and proxy same-origin API traffic.",
     evidence: [
@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "A real local browser flow verified sign-in, workspace discovery, declaration, transition, assignment, comments, and responsive layout.",
       "Runtime OpenAPI inspection verified all 19 paths, build metadata, and the bearer JWT boundary.",
       "The current backend package produced a 68,078,270-byte executable JAR with SHA-256 recorded in the local test report.",
-      "Public ServicePulse CI run 30521691031 passed on GitHub Actions for the frontend job and backend verify job at commit 7d947f7ccbb28978e7576663733b5e30edffcb4b.",
+      "Public ServicePulse CI run 30581003861 passed on GitHub Actions for the frontend job and backend verify job at commit 9c6e91be0eedf5f1bfe59d9ec8675f286a0fb3cc.",
     ],
     screenshots: [
       {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/servicepulse",
     demoStatus: "Verified locally; no live URL",
-    verification: "68 backend + 20 frontend tests; public ServicePulse CI run 30521691031 passed",
+    verification: "68 backend + 20 frontend tests; public ServicePulse CI run 30581003861 passed",
   },
   {
     slug: "cloudfileflow",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       "Hash-locked builds, Docker/Compose, and CI configuration",
     ],
     evidenceGate:
-      "The local adapter slice and public GitHub Actions pipeline are verified. Release still requires current screenshots or short demo media and a live link or explicit local-demo label.",
+      "The local adapter slice, public GitHub Actions pipeline, and static demo media are verified. A live link remains pending until deployment is executed and checked.",
     architecture:
       "A FastAPI process authenticates synthetic JWT principals and streams allowlisted files into generated quarantine paths while committing file, job, and audit rows to migrated SQLite. A separate polling worker atomically claims due jobs, validates bounded content, promotes valid objects, schedules exponential retries, recovers stale claims, and dead-letters exhausted work. Owner-scoped API queries expose metadata, job state, audit history, and READY-only downloads; a configured operator gets bounded sanitized job operations.",
     evidence: [
@@ -125,7 +125,15 @@ export const projects: Project[] = [
       "A separate non-editable runtime-lock install passed pip check and processed an upload through the continuously polling daemon.",
       "Wheel and source distributions build without network-isolated build dependencies; pip-audit reported no known vulnerabilities at the recorded check.",
       "Dockerfile, Compose, GitHub Actions, Dependabot, and security/order contracts parse and pass structural assertions.",
-      "Public CloudFileFlow CI run 30524523738 passed verify and container jobs at commit 949ebe2488a3b89374253babe48b392d2b24ad99.",
+      "Public CloudFileFlow CI run 30581003383 passed verify and container jobs at commit 79f41f264bcd58a946e5e81d2e9f1d24109bbdbc.",
+    ],
+    screenshots: [
+      {
+        src: "/screenshots/cloudfileflow-local-flow.png",
+        alt: "CloudFileFlow static demo evidence card showing upload, worker completion, audit actions, owner download, and OpenAPI path count.",
+        caption:
+          "Generated from a fresh local FastAPI/TestClient and worker flow using synthetic JSON; it proves the local SQLite/filesystem adapter path, not live cloud execution or deployment.",
+      },
     ],
     tradeoffs: [
       "SQLite and the filesystem make the complete failure model runnable at CAD 0, but they are not evidence of S3 durability or SQS visibility semantics.",
@@ -142,12 +150,12 @@ export const projects: Project[] = [
       "Docker is unavailable locally, but public GitHub Actions verified the non-root image build, Compose startup, API health, and worker healthcheck.",
       "No LocalStack, S3, SQS, PostgreSQL, external identity provider, live deployment, users, traffic, or cloud reliability is claimed.",
       "Signature and syntax checks are not malware scanning; rate limiting, reconciliation, replay, key rotation, metrics export, and alerting remain future work.",
-      "The repository is public, but the live demo, project screenshots, and demo media remain release gates.",
+      "The repository is public and static demo media exists, but no live demo or deployment is claimed.",
     ],
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/cloudfileflow",
     demoStatus: "Verified locally; no live URL",
-    verification: "34 tests; public CloudFileFlow CI run 30524523738 passed",
+    verification: "34 tests; public CloudFileFlow CI run 30581003383 passed",
   },
   {
     slug: "releaseguard",
@@ -165,7 +173,7 @@ export const projects: Project[] = [
       "GitHub Actions, Dependabot, and package-boundary configuration",
     ],
     evidenceGate:
-      "The local CLI slice and public GitHub Actions pipeline are verified. Publication still requires npm publication/provenance decisions only if a package release is desired, plus current screenshots or short demo media.",
+      "The local CLI slice, public GitHub Actions pipeline, and static demo media are verified. npm publication/provenance remains a separate optional release decision.",
     architecture:
       "ReleaseGuard reads a versioned repository configuration file, validates configured artifact paths against lexical and realpath containment checks, parses caller-provided build, Istanbul coverage, JUnit, npm-audit, changelog, and repository files, then evaluates deterministic policy checks. It emits a bounded human report or JSON document and exits with 0 for ready, 1 for policy failures, and 2 for configuration or input errors. The CLI never executes commands from the evaluated repository.",
     evidence: [
@@ -174,7 +182,15 @@ export const projects: Project[] = [
       "The compiled CLI returned exit 0 for the ready example, exit 1 for the synthetic failing-policy config, and exit 2 for invalid input.",
       "JSON output parsed as ready with zero failures, and the human report summarized 7 passed checks for the ready example.",
       "The package archive dry-run contained 25 runtime files, measured 13,592 bytes, and excluded tests, examples, CI metadata, TypeScript sources, coverage, and node_modules.",
-      "Public ReleaseGuard CI run 30530094408 passed on GitHub Actions for exact dependency install, lint/type-check/test/build, high-severity dependency audit, CLI JSON report generation, package archive build, and artifact upload at commit 0604a61ddd4bf81288185c17637ac237655901b9.",
+      "Public ReleaseGuard CI run 30581002440 passed on GitHub Actions for exact dependency install, lint/type-check/test/build, high-severity dependency audit, CLI JSON report generation, package archive build, and artifact upload at commit a7e9051730fcf86940c6ee1e5931375a0ae429db.",
+    ],
+    screenshots: [
+      {
+        src: "/screenshots/releaseguard-cli-report.png",
+        alt: "ReleaseGuard static demo evidence card showing the ready CLI report with seven passing checks and exit code zero.",
+        caption:
+          "Generated from fresh local CLI output against the synthetic example repository; it is CLI evidence, not npm publication or a hosted service claim.",
+      },
     ],
     tradeoffs: [
       "ReleaseGuard consumes existing CI artifacts instead of running repository commands, which keeps the tool safer but means artifact provenance is supplied by the caller.",
@@ -191,13 +207,13 @@ export const projects: Project[] = [
       "No npm registry release, provenance attestation, users, downloads, live service, or deployment is claimed.",
       "ReleaseGuard does not prove artifact freshness, test completeness, vulnerability database freshness, or release safety.",
       "It is not a vulnerability scanner, penetration test, dependency-review substitute, or security guarantee.",
-      "Screenshots or short demo media remain pending before final live portfolio promotion.",
+      "A static CLI demo card exists, but no npm registry release, live service, or hosted demo is claimed.",
     ],
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/releaseguard",
     demoStatus: "Verified locally; no live URL",
     verification:
-      "13 tests; public ReleaseGuard CI run 30530094408 passed; package dry-run verified",
+      "13 tests; public ReleaseGuard CI run 30581002440 passed; package dry-run verified",
   },
   {
     slug: "api-harbor",

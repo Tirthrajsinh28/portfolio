@@ -70,8 +70,11 @@ describe("portfolio foundation", () => {
       screen.getByText(/34 tests pass locally with 90% reported coverage/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Public CloudFileFlow CI run 30524523738 passed verify and container jobs at commit/i),
+      screen.getByText(/Public CloudFileFlow CI run 30581003383 passed verify and container jobs at commit/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(/CloudFileFlow static demo evidence card showing upload/i),
+    ).toHaveAttribute("src", "/screenshots/cloudfileflow-local-flow.png");
     expect(
       screen.getByText(/Docker is unavailable locally, but public GitHub Actions verified/i),
     ).toBeInTheDocument();
@@ -96,8 +99,11 @@ describe("portfolio foundation", () => {
       screen.getByText(/13 tests pass with coverage enabled/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Public ReleaseGuard CI run 30530094408 passed on GitHub Actions/i),
+      screen.getByText(/Public ReleaseGuard CI run 30581002440 passed on GitHub Actions/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(/ReleaseGuard static demo evidence card showing the ready CLI report/i),
+    ).toHaveAttribute("src", "/screenshots/releaseguard-cli-report.png");
     expect(
       screen.getByText(/exit 0 for the ready example/i),
     ).toBeInTheDocument();

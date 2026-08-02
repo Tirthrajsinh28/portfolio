@@ -12,6 +12,7 @@
   pull-request template, and content/accessibility issue template.
 - Add current ServicePulse screenshots captured from labeled synthetic demo
   mode and published in the public portfolio source.
+- Add current CloudFileFlow and ReleaseGuard static demo media generated from
+  fresh local API/worker and CLI outputs.
 
-Live Vercel deployment, CloudFileFlow/ReleaseGuard media, and final public
-profile/link review remain pending.
+Live Vercel deployment and final public profile/link review remain pending.

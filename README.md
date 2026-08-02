@@ -21,10 +21,12 @@ The app includes:
 - ServicePulse, CloudFileFlow, and ReleaseGuard case studies with locally
   verified architecture, test evidence, trade-offs, lessons, and explicit
   infrastructure/publication blockers.
+- Current ServicePulse screenshots plus CloudFileFlow and ReleaseGuard static
+  demo media generated from fresh local project outputs.
 
-Project repository and live-demo links remain withheld until publication and
-deployment gates pass. Featured projects are labeled with local evidence and
-are not presented as live services.
+Project repository links are present for the published source repositories.
+Live-demo links remain withheld until deployment gates pass. Featured projects
+are labeled with local/source evidence and are not presented as live services.
 
 ## Requirements
 
