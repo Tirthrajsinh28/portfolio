@@ -13,7 +13,7 @@ procedure, not evidence that deployment has already happened.
 - Current source repository:
   `https://github.com/Tirthrajsinh28/portfolio`.
 - Current public source commit verified by Portfolio CI:
-  `30909f39465f3efd1a12ecd16ba567bd118cf364`.
+  `d973079a7a98c625b5034b5e30f0e6a9af1bc8e1`.
 - Current build config: `vercel.json` uses `npm run build` and outputs `dist`.
 - No Vercel project, production URL, deployment health check, custom domain, or
   paid feature is verified yet.

@@ -17,5 +17,9 @@
 - Add a Vercel deployment runbook with pre-deployment checks, Hobby/free-tier
   guardrails, preview and production verification steps, rollback notes, and
   claims boundaries.
+- Refresh transitive development dependencies after GitHub Dependabot alerts:
+  `brace-expansion` is now locked to 5.0.9 and `undici` to 7.29.0. The
+  portfolio check gate and high-severity npm audit passed after the lockfile
+  update.
 
 Live Vercel deployment and final public profile/link review remain pending.
