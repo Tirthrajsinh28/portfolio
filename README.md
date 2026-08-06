@@ -59,6 +59,12 @@ Run all checks:
 npm run check
 ```
 
+Preview the production build locally:
+
+```bash
+npm run preview -- --host 127.0.0.1 --port 4173
+```
+
 See `CHANGELOG.md` for the current local release-note draft and remaining
 publication blockers.
 

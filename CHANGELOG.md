@@ -21,5 +21,9 @@
   `brace-expansion` is now locked to 5.0.9 and `undici` to 7.29.0. The
   portfolio check gate and high-severity npm audit passed after the lockfile
   update.
+- Add an npm `preview` script for serving the production Vite bundle locally
+  before Vercel deployment. The corrected preview route check served the home
+  page, three project case-study routes, and SPA fallback from the built
+  `dist/` output.
 
 Live Vercel deployment and final public profile/link review remain pending.
