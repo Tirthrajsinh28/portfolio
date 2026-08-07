@@ -25,5 +25,8 @@
   before Vercel deployment. The corrected preview route check served the home
   page, three project case-study routes, and SPA fallback from the built
   `dist/` output.
+- Refresh the local test DOM dependency to `jsdom` 30.0.1 after a cancelled
+  GitHub-native Dependabot update attempt; the Node.js engine floor is now
+  documented as 22.22.2 or newer.
 
 Live Vercel deployment and final public profile/link review remain pending.

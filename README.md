@@ -33,7 +33,8 @@ are labeled with local/source evidence and are not presented as live services.
 - Node.js 22.12 or later.
 - npm 11 or later.
 
-The verified local foundation used Node.js 24.15.0 and npm 11.12.1.
+The portfolio requires Node.js 22.22.2 or newer. The verified local foundation
+used Node.js 24.15.0 and npm 11.12.1.
 
 ## Local development
 
