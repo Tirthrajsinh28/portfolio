@@ -34,7 +34,7 @@ describe("portfolio foundation", () => {
     ).toHaveAttribute("href", "https://github.com/Tirthrajsinh28/servicepulse");
     expect(screen.getByText("Verified locally; no live URL")).toBeInTheDocument();
     expect(
-      screen.getByText(/68 backend tests pass with an enforced 80% line gate/i),
+      screen.getByText(/71 backend tests pass with an enforced 80% line gate/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/failed-notification administrator\/viewer states/i),
