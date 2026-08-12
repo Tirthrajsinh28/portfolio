@@ -37,7 +37,10 @@ describe("portfolio foundation", () => {
       screen.getByText(/78 backend tests pass with an enforced 80% line gate/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/failed-notification administrator\/viewer states/i),
+      screen.getByText(/membership\/invitation, and failed-notification administrator\/viewer states/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Public ServicePulse CI run 31635222134 passed on GitHub Actions for frontend checks\/audit\/image build/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/public GitHub Actions verified the backend container image/i),

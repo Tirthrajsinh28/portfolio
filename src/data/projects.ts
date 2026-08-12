@@ -50,12 +50,12 @@ export const projects: Project[] = [
       "A React and TypeScript client calls a Spring Boot modular monolith. PostgreSQL is the intended system of record; Flyway manages the schema, workspace membership enforces tenant access, and a transactional outbox feeds a bounded notification worker. An unprivileged NGINX tier is configured to serve the client and proxy same-origin API traffic.",
     evidence: [
       "78 backend tests pass with an enforced 80% line gate; observed coverage is 94.6% lines and 70.3% branches.",
-      "20 frontend tests pass across authentication, dashboard, service catalog administration, workspace membership administration, failed-notification operations, skip-link landmark behavior, incident workflows, viewer controls, HTTP refresh behavior, and problem mapping.",
-      "Automated axe scans report no violations across 12 current route states, including service catalog, membership, and failed-notification administrator/viewer states.",
+      "21 frontend tests pass across authentication, dashboard, service catalog administration, workspace membership and invitation administration, failed-notification operations, skip-link landmark behavior, incident workflows, viewer controls, HTTP refresh behavior, and problem mapping.",
+      "Automated axe scans report no violations across current route states, including service catalog, membership/invitation, and failed-notification administrator/viewer states.",
       "A real local browser flow verified sign-in, workspace discovery, declaration, transition, assignment, comments, and responsive layout.",
       "Runtime OpenAPI inspection verified all 23 paths, build metadata, and the bearer JWT boundary, including the public registration/login/refresh and authenticated invitation boundaries.",
-      "The current backend package produced a 68,085,046-byte executable JAR with SHA-256 recorded in the local test report.",
-      "Public ServicePulse CI run 30581003861 passed on GitHub Actions for the frontend job and backend verify job at commit 9c6e91be0eedf5f1bfe59d9ec8675f286a0fb3cc.",
+      "The current backend invitation package produced a 68,102,533-byte executable JAR with SHA-256 recorded in the local test report.",
+      "Public ServicePulse CI run 31635222134 passed on GitHub Actions for frontend checks/audit/image build and backend unit/PostgreSQL integration tests plus backend image build at commit 7bdb5ec2eca234bdd9ee9d284e60a50caa799290.",
     ],
     screenshots: [
       {
@@ -91,13 +91,13 @@ export const projects: Project[] = [
     limitations: [
       "Docker is unavailable locally, so Compose health remains unexecuted in this workspace; public GitHub Actions verified the backend container image, frontend container image, frontend checks, and PostgreSQL integration test job.",
       "No live deployment, production traffic, or external notification delivery is claimed.",
-      "Frontend invitation management/email delivery, external notification delivery, service deletion, distributed/edge rate limits, signing-key rotation, and database-enforced audit immutability remain future work.",
+      "Invitation email delivery, public magic-link routing, external notification delivery, service deletion, distributed/edge rate limits, signing-key rotation, and database-enforced audit immutability remain future work.",
       "Physical-keyboard, contrast, zoom, and screen-reader checks remain before public release.",
     ],
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/servicepulse",
     demoStatus: "Verified locally; no live URL",
-    verification: "78 backend + 20 frontend tests locally; public ServicePulse CI run 30581003861 passed for the previously published source",
+    verification: "78 backend + 21 frontend tests locally; public ServicePulse CI run 31635222134 passed for the current public source",
   },
   {
     slug: "cloudfileflow",
