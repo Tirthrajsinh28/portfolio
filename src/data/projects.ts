@@ -119,13 +119,14 @@ export const projects: Project[] = [
     architecture:
       "A FastAPI process authenticates synthetic JWT principals and streams allowlisted files into generated quarantine paths while committing file, job, and audit rows to migrated SQLite. A separate polling worker atomically claims due jobs, validates bounded content, promotes valid objects, schedules exponential retries, recovers stale claims, and dead-letters exhausted work. Owner-scoped API queries expose metadata, job state, audit history, and READY-only downloads; a configured operator gets bounded sanitized job operations.",
     evidence: [
-      "34 tests pass locally with 90% reported coverage and an enforced 80% minimum.",
+      "36 tests pass locally with 90% reported coverage and an enforced 80% minimum.",
       "An empty database upgrades to Alembic revision 20260704_01, startup rejects an unmigrated schema, and the model-drift check reports no pending operations.",
       "A real local Uvicorn and installed-worker flow verified health, HTTP 201 upload, READY promotion, chronological audit, owner download, cross-owner HTTP 404, operator counts, and correlated JSON logs.",
+      "Operator-only dead-letter replay is implemented with state guards, preserved job IDs, attempt reset, sanitized error clearing, and JOB_REPLAYED audit records.",
       "A separate non-editable runtime-lock install passed pip check and processed an upload through the continuously polling daemon.",
       "Wheel and source distributions build without network-isolated build dependencies; pip-audit reported no known vulnerabilities at the recorded check.",
       "Dockerfile, Compose, GitHub Actions, Dependabot, and security/order contracts parse and pass structural assertions.",
-      "Public CloudFileFlow CI run 30581003383 passed verify and container jobs at commit 79f41f264bcd58a946e5e81d2e9f1d24109bbdbc.",
+      "Public CloudFileFlow CI run 31638046039 passed verify and container jobs at commit 79819432d12e97d3d324b092293327f3ea27e162.",
     ],
     screenshots: [
       {
@@ -149,13 +150,13 @@ export const projects: Project[] = [
     limitations: [
       "Docker is unavailable locally, but public GitHub Actions verified the non-root image build, Compose startup, API health, and worker healthcheck.",
       "No LocalStack, S3, SQS, PostgreSQL, external identity provider, live deployment, users, traffic, or cloud reliability is claimed.",
-      "Signature and syntax checks are not malware scanning; rate limiting, reconciliation, replay, key rotation, metrics export, and alerting remain future work.",
+      "Signature and syntax checks are not malware scanning; rate limiting, reconciliation, key rotation, metrics export, and alerting remain future work.",
       "The repository is public and static demo media exists, but no live demo or deployment is claimed.",
     ],
     repositoryStatus: "Published on GitHub",
     repositoryUrl: "https://github.com/Tirthrajsinh28/cloudfileflow",
     demoStatus: "Verified locally; no live URL",
-    verification: "34 tests; public CloudFileFlow CI run 30581003383 passed",
+    verification: "36 tests; public CloudFileFlow CI run 31638046039 passed",
   },
   {
     slug: "releaseguard",

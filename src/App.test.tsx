@@ -70,10 +70,10 @@ describe("portfolio foundation", () => {
       screen.getByRole("link", { name: "Published on GitHub" }),
     ).toHaveAttribute("href", "https://github.com/Tirthrajsinh28/cloudfileflow");
     expect(
-      screen.getByText(/34 tests pass locally with 90% reported coverage/i),
+      screen.getByText(/36 tests pass locally with 90% reported coverage/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Public CloudFileFlow CI run 30581003383 passed verify and container jobs at commit/i),
+      screen.getByText(/Public CloudFileFlow CI run 31638046039 passed verify and container jobs at commit/i),
     ).toBeInTheDocument();
     expect(
       screen.getByAltText(/CloudFileFlow static demo evidence card showing upload/i),
