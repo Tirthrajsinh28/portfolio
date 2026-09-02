@@ -28,5 +28,9 @@
 - Refresh the local test DOM dependency to `jsdom` 30.0.1 after a cancelled
   GitHub-native Dependabot update attempt; the Node.js engine floor is now
   documented as 22.22.2 or newer.
+- Add `npm run check:production-routes`, a portable production-bundle preflight
+  that serves the built portfolio locally, verifies route shells and current
+  screenshot/demo PNG assets, and is wired into Portfolio CI after dependency
+  audit.
 
 Live Vercel deployment and final public profile/link review remain pending.

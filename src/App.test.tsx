@@ -187,6 +187,24 @@ describe("portfolio foundation", () => {
     expect(document.activeElement).toHaveAttribute("id", "main-content");
   });
 
+  it("places the skip link first in keyboard order and targets the main landmark", async () => {
+    const user = userEvent.setup();
+    renderRoute("/");
+
+    const skipLink = screen.getByRole("link", {
+      name: /skip to main content/i,
+    });
+    const main = screen.getByRole("main");
+
+    expect(skipLink).toHaveAttribute("href", "#main-content");
+    expect(main).toHaveAttribute("id", "main-content");
+    expect(main).toHaveAttribute("tabindex", "-1");
+
+    await user.tab();
+
+    expect(skipLink).toHaveFocus();
+  });
+
   it("has no automated accessibility violations on the home page", async () => {
     const { container } = renderRoute("/");
     const results = await axe(container);

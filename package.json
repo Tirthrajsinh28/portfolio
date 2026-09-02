@@ -14,6 +14,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc -b --pretty false",
+    "check:production-routes": "node scripts/check-production-routes.mjs",
     "check": "npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {

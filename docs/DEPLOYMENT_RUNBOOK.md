@@ -1,6 +1,6 @@
 # Portfolio deployment runbook
 
-Last updated: 2026-08-02
+Last updated: 2026-09-01
 
 This runbook is for deploying the static Vite portfolio to Vercel after the
 candidate has logged in and confirmed the Hobby/free plan. It is a deployment
@@ -12,8 +12,11 @@ procedure, not evidence that deployment has already happened.
 - Cost ceiling: CAD 0 unless the candidate explicitly changes it.
 - Current source repository:
   `https://github.com/Tirthrajsinh28/portfolio`.
-- Current public source commit verified by Portfolio CI:
-  `d973079a7a98c625b5034b5e30f0e6a9af1bc8e1`.
+- Current published public source commit verified by Portfolio CI:
+  `0eb8ba2f5e8abd1eda5f8c142b11fba8db71ec96` in run `31675930812`.
+- Current local source adds `npm run check:production-routes`; publish and
+  verify the next Portfolio CI run before treating that new preflight as
+  remote evidence.
 - Current build config: `vercel.json` uses `npm run build` and outputs `dist`.
 - No Vercel project, production URL, deployment health check, custom domain, or
   paid feature is verified yet.
@@ -42,6 +45,7 @@ Run from `C:\PortfolioWorkspace\portfolio`:
 npm.cmd ci
 npm.cmd run check
 npm.cmd audit --audit-level=high
+npm.cmd run check:production-routes
 ```
 
 Run from `C:\PortfolioWorkspace`:
@@ -62,6 +66,11 @@ Expected source-document hashes:
 Do not deploy if the checks fail, source documents changed, or public content
 contains unsupported certification, degree, employer, metric, production, user,
 traffic, or live-service claims.
+
+`npm.cmd run check:production-routes` is a local production-bundle preflight:
+it builds the Vite app, serves it on `127.0.0.1:4173`, verifies required route
+shells and screenshot/demo PNG delivery, and stops the preview listener. It is
+not a Vercel deployment or public URL check.
 
 ## Login and project link
 

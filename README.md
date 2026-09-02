@@ -66,6 +66,20 @@ Preview the production build locally:
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
+Run the reproducible production-route preflight:
+
+```bash
+npm run check:production-routes
+```
+
+This builds the app, serves the production bundle locally, verifies the route
+shells and current screenshot/demo PNG assets, and then stops the preview
+process. It is local production-bundle evidence, not a live deployment claim.
+
+Manual accessibility QA is tracked in `docs/MANUAL_ACCESSIBILITY_QA.md`. Do
+not publish an accessibility claim until that checklist is executed against the
+current local preview or deployed Vercel URL and the result is recorded.
+
 See `CHANGELOG.md` for the current local release-note draft and remaining
 publication blockers.
 
